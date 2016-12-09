@@ -124,5 +124,4 @@
   <plugin name="cordova-plugin-file"  />
   <plugin name="cordova-plugin-geolocation" />
   <plugin name="cordova-plugin-barcodescanner" />
-  <plugin name ="cordova plugin add cordova-plugin-contacts-phonenumbers" />
 </widget>
