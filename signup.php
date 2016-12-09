@@ -1,7 +1,8 @@
 <?php
 	session_start();
 	//connecting to database
-	$db = mysqli_connect("localhost" , "root" ,"" , "mobilewebfinal");
+		$db = mysqli_connect("localhost" , "anne.gitau" ,"4b0c5d693796dba9
+" , "db__anne_gitau");
 	
 	if (isset($_POST['register_btn'])){
 		session_start();
