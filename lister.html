@@ -1,0 +1,173 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>churchlink</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+		<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" />
+		<!--<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.css" />-->
+		<link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" />
+		<link rel="stylesheet" href="vendor/waves/waves.min.css" />
+		<link rel="stylesheet" href="vendor/wow/animate.css" />
+		<link rel="stylesheet" href="css/nativedroid2.css" />
+
+		<meta name="mobile-web-app-capable" content="yes">
+	 	<meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<script>
+    var xmlhttp; 
+	
+    window.onload = function() 
+	{ 
+	//document.addEventListener('deviceready', init, false); 
+	xmlhttp = new XMLHttpRequest(); 
+	xmlhttp.onreadystatechange = processChurch;
+
+	} 
+	function getLocation() 
+	{ 
+	var options = { 
+	enableHighAccuracy: true, 
+	timeout: 50000,  
+	maximumAge: 0 
+	}; 
+	navigator.geolocation.getCurrentPosition(successes, failures, options);
+	}
+	
+	  function successes(position) 
+	  { 
+	  var latitude = position.coords.latitude; 
+	  var long = position.coords.longitude; 
+	  var googleURL = "https://maps.googleapis.com/maps/api/place/nearbysearch/xml?key=AIzaSyAwH5F7MxOgNRXDcesHJDebSmmdJb_iwBk&location="; 
+	  googleURL += latitude + "," + long; 
+	  googleURL += "&rankby=distance&keyword=bar"; 
+	  getChurchList(googleURL);                     
+	  } 
+
+	  function getChurchList(URL) 
+	  { 
+	  xmlhttp.open("GET", URL, true); 
+	  xmlhttp.send(); 
+	  } 
+	  
+	  function processChurch() 
+	  { 
+
+	  var out="<ul data-role='listview' data-inset='true' id='restList'>";  
+	  if(xmlhttp.readyState == 4 && xmlhttp.status==200) 
+	  { 
+	  var churchXML = $.parseXML(xmlhttp.responseText); 
+	  var xml = $(churchXML); 
+	  console.log(xml); 
+	  $(xml).find("result").each(function(){ 
+	  var name = $(this).find('name').text(); 
+	  var address = $(this).find('vicinity').text(); 
+	  var rating = $(this).find('rating').text(); 
+	  var open = $(this).find('opening_hours').find('open_now'). text();
+	  
+	  var lat = $(this).find('geometry').find('location').find('lat').text();
+	  var lng = $(this).find('geometry').find('location').find('lng').text();
+	  
+	   out += "<li data-role='list-divider'> <a href='https://www.google.com/maps/@lat,lng' data-transition=''><div style='background: ; color:black;'<h1>"; 
+	   
+	   out += name + "</h1></div></a></li>"; 
+	   out += "<li>" + address; 
+	   out += "<p>Google Rating: " + rating + "</p>"; 
+	   if(open){ 
+	   out += "<p class='ul-li-aside'>Open Now!</p>"; 
+	   } 
+	   out += "</li>"; 
+	   }); 
+	   } 
+	   out += "</ul>";
+	   document.getElementById('result').innerHTML = "<h1>Churches Around Me</h1>"; 
+	   document.getElementById('result').innerHTML = out; 
+	   $("#restList").listview().listview('refresh');   
+	   
+	   }
+
+	   function failures(message) 
+	   { 
+	   alert("Error:" + message.message); 
+	   } 
+	   
+
+	   function clearScreen() 
+	   { 
+	   document.getElementById('result').innerHTML = ""; 
+	   }
+	   
+   
+     
+	 
+    </script>
+
+	</head>
+	<body>
+	
+	<div data-role="page" id="first">
+
+			<nd2-include data-src="examples/fragments/panel.left.html"></nd2-include>
+
+			<div data-role="panel" id="bottomsheet" data-animate="false" data-position='bottom' data-display="overlay">
+				<nd2-include data-src="examples/fragments/bottom.sheet.html"></nd2-include>
+			</div>
+
+			<div data-role="header" data-position="fixed" class="wow fadeInDown" data-wow-delay="0.2s">
+			
+				<a href="#leftpanel" class="ui-btn ui-btn-left wow fadeIn" data-wow-delay='0.8s'><i class="zmdi zmdi-menu"></i></a>
+				<h1 class="wow fadeIn" data-wow-delay='0.4s'>Places Finder</h1>
+			</div>
+
+			
+   
+ <div id="container"> 
+ <button id="btnGetLocation" onclick="getLocation()">Church List</button> 
+<button id="btnClear" onclick="clearScreen()">Clear</button> 
+ <a href="#login" data-transition="pop">
+  
+ <div id="result"></div>
+ </div>
+ </div>
+	
+ 
+ <div data-role="page" id="admin">
+
+			<nd2-include data-src="examples/fragments/panel.left.html"></nd2-include>
+
+			
+
+			<div data-role="header" data-position="fixed"  class="wow fadeInDown" data-wow-delay="0.2s" style="background-color:red;">
+			
+				<a href="#leftpanel" class="ui-btn ui-btn-left wow fadeIn" data-wow-delay='0.8s'><i class="zmdi zmdi-menu"></i></a>
+				<h1 class="wow fadeIn" data-wow-delay='0.4s'>Admin Console</h1>
+			</div>
+
+			
+   
+ <div id="container"> 
+  
+ <button id="btnGetLocation" onclick="getLocation()">Nearby Churches</button>
+
+ <button id="btnClear" onclick="clearScreen()">Clear</button> 
+ <div id="result"></div>
+ </div>
+ </div>
+
+		<script src="js/script.js"></script>
+		<script src="cordova.js"></script>
+		<!--<script src="js/nativedroid2.js"></script>
+
+		 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDPflJXFtDl_8_ip9OqwxVdld7Bwdkp-go&callback=initMap"
+    async defer></script>-->
+
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+		<script src="http://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.js"></script>
+		<script src="vendor/waves/waves.min.js"></script>
+		<script src="vendor/wow/wow.min.js"></script>
+		<script src="js/nativedroid2.js"></script>
+		<script src="nd2settings.js"></script>
+
+	</body>
+</html>

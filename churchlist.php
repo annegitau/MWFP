@@ -71,90 +71,90 @@
                                         <td> 1 </td>
                                         <td> Christ Grace Power Ministry </td>
                                         <td> Oyarifa </td>
-                                        <td> 0263597637 </td>
-                                        <td> Rate </td>
+                                        <td> +233244335364 </td>
+                                        <td>  </td>
                                     </tr>
                                     <tr>
                                         <td> 2 </td>
                                         <td> 
 Presbyterian Church Of Ghana</td>
                                         <td> pantang </td>
-                                        <td> 0263597637 </td>
-                                        <td> Rate </td>
+                                        <td> +233269876576 </td>
+                                        <td>  </td>
                                     </tr>
                                     <tr>
                                         <td> 3 </td>
                                         <td> king's dominion chapel int'l </td>
                                         <td> pantang </td>
-                                        <td> 0263597637 </td>
-                                        <td> Rate </td>
+                                        <td> +233548757364 </td>
+                                        <td>  </td>
                                     </tr>
                                     <tr>
                                         <td> 4 </td>
                                         <td> 
 ICGC Holy Ghost Temple </td>
                                         <td> Adenta </td>
-                                        <td> 0263597637 </td>
-                                        <td> Rate </td>
+                                        <td> +233207584736 </td>
+                                        <td>  </td>
                                     </tr>
                                     <tr>
                                         <td> 4 </td>
                                         <td> 
 Victory Presbyterian Church,  </td>
                                         <td> Adentan-Fafraha </td>
-                                        <td> 0263597637 </td>
-                                        <td> Rate </td>
+                                        <td> +233572937485 </td>
+                                        <td>  </td>
                                     </tr>
                                     <tr>
                                         <td> 6 </td>
                                         <td> HighCity Church - Fire Chapel </td>
                                         <td> Ashongman </td>
-                                        <td> 0263597637 </td>
-                                        <td> Rate </td>
+                                        <td> +233506878695 </td>
+                                        <td>  </td>
                                     </tr>
                                     <tr>
                                         <td> 6 </td>
-                                        <td>
-Atomic Hills Presbyterian Church </td>
+                                        <td>Atomic Hills Presbyterian Church </td>
                                         <td> Estate </td>
-                                        <td> 0263597637 </td>
-                                        <td> Rate </td>
+                                        <td> +233268958374 </td>
+                                        <td>  </td>
                                     </tr>
                                     <tr>
                                         <td> 8 </td>
                                         <td> 
 PCG-Shalom Congregation</td>
                                         <td> Haatso </td>
-                                        <td> 0263597637 </td>
-                                        <td> Rate </td>
+                                        <td> +233547685846 </td>
+                                        <td>  </td>
                                     </tr>
                                     <tr>
                                         <td> 9 </td>
                                         <td> 
 Headquarters of Christ</td>
                                         <td> Haatso </td>
-                                        <td> 0263597637 </td>
-                                        <td> Rate </td>
+                                        <td> +233578574637 </td>
+                                        <td>  </td>
                                     </tr>
                                     <tr>
                                         <td> 10 </td>
                                         <td> HighCity Church - Sandra Chapel </td>
                                         <td> Agbogba </td>
-                                        <td> 0263597637 </td>
-                                        <td> Rate </td>
+                                        <td> +233268978654 </td>
+                                        <td>  </td>
                                     </tr>
                                     <tr>
                                         <td> 11 </td>
                                         <td>
 Adenta Estates Worship Centre - The Church of Pentecost </td>
                                         <td> Adenta </td>
-                                        <td> 0263597637 </td>
-                                        <td> Rate </td>
+                                        <td> +233248675647 </td>
+                                        <td>  </td>
                                     </tr>
                                 
                             </tbody>
                             
                         </table>
+                            
                             
                         </div>
                     </div>
